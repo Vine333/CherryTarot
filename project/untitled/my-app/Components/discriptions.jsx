@@ -2,23 +2,24 @@ import React from 'react';
 import styled from "styled-components";
 
 const Discriptions = () => {
-    return (<Wrapper>
+    return (
+        <Wrapper>
             <div className='container'>
 
                 <div className='left'>
                     <span className='subtitle'>Обо Мне</span>
 
                     <h2>
-                        Таро с глубиной <br/>
+                        Таро с глубиной <br />
                         и пониманием
                     </h2>
 
                     <p>
-                         Твой таролог с психологическим подходом <br/>
-                         Выслушаю, поддержу и помогу разобраться в чувствах<br/>
-                         После расклада ты не останешься наедине с мыслями<br/>
-                         Оплата доступна в леях, рублях ПМР и рублях РФ<br/>
-                         Расклады с глубиной, интуицией и пониманием<br/>
+                        Твой таролог с психологическим подходом <br />
+                        Выслушаю, поддержу и помогу разобраться в чувствах <br />
+                        После расклада ты не останешься наедине с мыслями <br />
+                        Оплата доступна в леях, рублях ПМР и рублях РФ <br />
+                        Расклады с глубиной, интуицией и пониманием
                     </p>
 
                     <p>
@@ -45,7 +46,8 @@ const Discriptions = () => {
                 </div>
 
             </div>
-        </Wrapper>);
+        </Wrapper>
+    );
 };
 
 const Wrapper = styled.section`
@@ -102,9 +104,7 @@ const Wrapper = styled.section`
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 28px;
     padding: 30px;
-
     backdrop-filter: blur(12px);
-
     transition: 0.3s ease;
   }
 
@@ -123,12 +123,17 @@ const Wrapper = styled.section`
     font-size: 30px;
   }
 
-
   @media (max-width: 1000px) {
-   
+    padding: 80px 30px;
 
     .container {
       flex-direction: column;
+      text-align: center;
+      gap: 50px;
+    }
+
+    .left {
+      max-width: 100%;
     }
 
     h2 {
@@ -141,45 +146,93 @@ const Wrapper = styled.section`
 
     .right {
       width: 100%;
-    }
-  }
-  @media (max-width: 769px) {
-    .section{
-      padding: 70px;
-    }
-p{
-  font-size: 28px;
-  align-items: center;
-}
-   
-    
-    h2{
-      font-size: 55px;
-    }
-    .right {
-
-      margin: 0;
-    }
-
-    .left {
+      margin-right: 0;
       align-items: center;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
     }
 
     .card {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .subtitle {
-      font-size: 20px;
+      width: 100%;
+      max-width: 400px;
     }
   }
 
+  @media (max-width: 768px) {
+    padding: 40px 15px;
+
+    .container {
+      gap: 35px;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin: 15px 0 25px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .right {
+      width: 100%;
+      min-width: unset;
+      gap: 18px;
+    }
+
+    .card {
+      padding: 20px;
+      border-radius: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+
+      width: 100%;
+    }
+
+    .card span {
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+
+    .card h3 {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 10px;
+
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    .card {
+      padding: 18px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+    }
+  }
 `;
 
 export default Discriptions;
