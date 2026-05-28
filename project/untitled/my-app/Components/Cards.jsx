@@ -693,6 +693,9 @@ transition: opacity 0s;
   @media(max-width: 426px){
     .spread-card h3{
       font-size: clamp(23px, 2.4vw, 38px);
+      max-width: 100%;
+      letter-spacing: 0.3px;
+      text-align: center;
       
 
     }
