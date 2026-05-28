@@ -51,11 +51,7 @@ const FirstSections = ({ openModal }) => {
             </div>
 
 
-            <div className="scroll-indicator">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
         </Wrapper>
     );
 };
@@ -276,76 +272,7 @@ const Wrapper = styled.section`
     animation: cloudRight 20s ease-in-out infinite;
   }
 
-  .scroll-indicator{
-    position: absolute;
-
-    left: 50%;
-    bottom: 15%;
-
-    transform: translateX(-50%);
-
-    display: none;
-
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-
-    z-index: 20;
-  }
-
-  .scroll-indicator span{
-    width: 18px;
-    height: 18px;
-
-    border-right: 3px solid white;
-    border-bottom: 3px solid white;
-
-    transform: rotate(45deg);
-
-    animation: arrows 1.6s infinite;
-  }
-
-  .scroll-indicator span:nth-child(1){
-    opacity: 1;
-  }
-
-  .scroll-indicator span:nth-child(2){
-    opacity: 0.5;
-
-    margin-top: -6px;
-
-    animation-delay: 0.2s;
-  }
-
-  .scroll-indicator span:nth-child(3){
-    opacity: 0.2;
-
-    margin-top: -6px;
-
-    animation-delay: 0.4s;
-  }
-
-  @keyframes arrows{
-    0%{
-      transform: rotate(45deg) translate(-4px,-4px);
-      opacity: 0;
-    }
-
-    50%{
-      opacity: 1;
-    }
-
-    100%{
-      transform: rotate(45deg) translate(4px,4px);
-      opacity: 0;
-    }
-  }
-
-  @media (max-width: 768px){
-    .scroll-indicator{
-      display:flex;
-    }
-  }
+ 
   .particles span {
     position: absolute;
 
