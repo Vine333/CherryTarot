@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Dropdown, Space } from "antd";
+import burgerBg from "/img/burger.png";
 
 const Header = ({ currency, setCurrency }) => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -122,7 +123,6 @@ const Header = ({ currency, setCurrency }) => {
 
 const Wrapper = styled.header`
   width: 100%;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -141,7 +141,6 @@ const Wrapper = styled.header`
 
   &.scrolled {
     background: rgba(10, 10, 10, 0.72);
-
     backdrop-filter: blur(14px);
 
     box-shadow:
@@ -377,13 +376,16 @@ const Wrapper = styled.header`
 
       background:
               linear-gradient(
-                      180deg,
-                      rgba(5, 5, 5, 0.98),
-                      rgba(20, 0, 0, 0.98),
-                      rgba(45, 0, 10, 0.98)
-              );
+                      rgba(0, 0, 0, 0.4),
+                      rgba(0, 0, 0, 0.4)
+              ),
+              url(${burgerBg});
 
-      backdrop-filter: blur(18px);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      backdrop-filter: blur(10px);
 
       flex-direction: column;
       align-items: center;
@@ -391,7 +393,7 @@ const Wrapper = styled.header`
 
       gap: 34px;
 
-      transition: 0.45s ease;
+      transition: 0.9s ease;
 
       z-index: 1000;
 
@@ -470,4 +472,3 @@ const Wrapper = styled.header`
 `;
 
 export default Header;
-

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import burger from '/img/burger.png'
 import first from "/img/first.png";
 import second from "/img/second.png";
 import treti from "/img/tertia.png";
@@ -15,6 +15,27 @@ import odinatsat from '/img/11.png'
 import dvenatsat from '/img/12.png'
 
 const spreads = [
+    {
+        title: "Прайс вопросов",
+        img: burger,
+        prices: {
+            RUB: "от 150 ₽",
+            PRB: "от 33 ₽",
+            MDL: "от 33 MDL",
+        },
+        questions: [
+            "1 вопрос — 150 ₽ / 33 MDL",
+            "2 вопроса — 250 ₽ / 55 MDL",
+            "3 вопроса — 350 ₽ / 77 MDL",
+            "4 вопроса — 450 ₽ / 99 MDL",
+            "5 вопросов — 550 ₽ / 122 MDL",
+            "6 вопросов — 650 ₽ / 144 MDL",
+            "7 вопросов — 750 ₽ / 166 MDL",
+            "8 вопросов — 850 ₽ / 188 MDL",
+            "9 вопросов — 950 ₽ / 211 MDL",
+            "10 вопросов — 1050 ₽ / 233 MDL",
+        ],
+    },
     {
         title: "Как там бывшая?",
         img:first,
@@ -32,6 +53,7 @@ const spreads = [
             "Что он хотел бы сказать тебе?",
         ],
     },
+
     {
         title: "Тишина",
         img:second,
@@ -666,6 +688,16 @@ transition: opacity 0s;
 
     .questions {
       grid-template-columns: 1fr;
+    }
+  }
+  @media(max-width: 426px){
+    .spread-card h3{
+      font-size: clamp(23px, 2.4vw, 38px);
+      
+
+    }
+    .spread-card{
+      justify-content: center;
     }
   }
 `;

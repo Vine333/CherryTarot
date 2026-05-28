@@ -446,7 +446,7 @@ const Wrapper = styled.section`
 
     .cloud-left,
     .cloud-right {
-      opacity: 0.04;
+      opacity: 0.2;
     }
   }
 
@@ -477,8 +477,8 @@ const Wrapper = styled.section`
     .sun {
       width: 230px;
       height: 230px;
-
-      top: 70px;
+right: 10%;
+      top: 5%;
     }
 
     .eyebrow {
@@ -500,10 +500,11 @@ const Wrapper = styled.section`
     }
 
     .sun {
-      width: 180px;
-      height: 180px;
-
-      opacity: 0.12;
+      width: 500px;
+      height:500px;
+right: 45%;
+      top: 50%  ;
+      opacity: 0.46;
     }
 
     .cloud {
