@@ -60,7 +60,7 @@ const Header = ({ currency, setCurrency }) => {
     return (
         <Wrapper className={scrolled ? "scrolled" : ""}>
             <a href="#home" className="logo">
-                WitchCherry<span>Taro</span>
+                WitchCherry<span>Tarot</span>
             </a>
 
             <nav className={menuOpen ? "active" : ""}>

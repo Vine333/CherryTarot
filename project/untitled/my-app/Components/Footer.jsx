@@ -21,7 +21,7 @@ const Footer = ({ openModal }) => {
 
                 <div className="brand">
                     <h2>
-                        WitchCherry <span className='taro'>Taro</span>
+                        WitchCherry <span className='taro'>Tarot</span>
                     </h2>
 
                     {/* <div className={'running'}>
@@ -71,7 +71,7 @@ const Footer = ({ openModal }) => {
             </div>
 
             <div className="bottom">
-                <p>© 2026 WitchCherryTaro</p>
+                <p>© 2026 WitchCherryTarot</p>
                 <p>made with intuition ✦</p>
             </div>
 

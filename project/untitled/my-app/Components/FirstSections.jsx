@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import sakuraBranch from "/img/sakura_branch_transparent_no_glow.png"
 import Sakura from "/img/sakura.png";
 import Clouds from "/img/clouds.png";
 
@@ -51,7 +51,9 @@ const FirstSections = ({ openModal }) => {
             </div>
 
 
-
+<div className='sakuraBranch'>
+    <img src={sakuraBranch} alt=""/>
+</div>
         </Wrapper>
     );
 };
@@ -68,6 +70,23 @@ const Wrapper = styled.section`
 
   overflow: hidden;
 
+  .sakuraBranch {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .sakuraBranch img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 0.95;
+  }
   linear-gradient(145deg, rgba(130, 20, 20, 0.9), rgba(70, 20, 20, 0.82));
   .overlay {
     position: absolute;
@@ -469,6 +488,20 @@ const Wrapper = styled.section`
     .actions {
       flex-direction: column;
       gap: 16px;
+    }
+    .sakuraBranch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 80px;
+      filter: brightness(0.6);
+      opacity: 0.6;
+    }
+
+    .sakuraBranch img {
+      width: 85%;
+      max-width: 350px;
     }
 
     .actions button {
