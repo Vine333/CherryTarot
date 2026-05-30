@@ -500,8 +500,9 @@ const Wrapper = styled.section`
     }
 
     .sakuraBranch img {
-      width: 85%;
+      width: 65%;
       max-width: 350px;
+      height: auto;
     }
 
     .actions button {
