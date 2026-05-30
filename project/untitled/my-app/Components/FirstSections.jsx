@@ -494,7 +494,7 @@ const Wrapper = styled.section`
       justify-content: center;
       align-items: center;
       width: 100%;
-      margin-bottom: 160px;
+      margin-bottom: 40px;
       filter: brightness(0.6);
       opacity: 0.6;
     }
