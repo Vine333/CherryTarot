@@ -14,31 +14,58 @@ import desat from '/img/10.png'
 import odinatsat from '/img/11.png'
 import dvenatsat from '/img/12.png'
 
+
 const spreads = [
     {
         title: "Прайс вопросов",
         img: burger,
         prices: {
             RUB: "от 150 ₽",
-            PRB: "от 33 ₽",
             MDL: "от 33 MDL",
+            PRB: "от 33 ₽",
         },
-        questions: [
-            "1 вопрос — 150 ₽ / 33 MDL",
-            "2 вопроса — 250 ₽ / 55 MDL",
-            "3 вопроса — 350 ₽ / 77 MDL",
-            "4 вопроса — 450 ₽ / 99 MDL",
-            "5 вопросов — 550 ₽ / 122 MDL",
-            "6 вопросов — 650 ₽ / 144 MDL",
-            "7 вопросов — 750 ₽ / 166 MDL",
-            "8 вопросов — 850 ₽ / 188 MDL",
-            "9 вопросов — 950 ₽ / 211 MDL",
-            "10 вопросов — 1050 ₽ / 233 MDL",
-        ],
+        questions: {
+            RUB: [
+                "1 вопрос — 150 ₽",
+                "2 вопроса — 250 ₽",
+                "3 вопроса — 350 ₽",
+                "4 вопроса — 450 ₽",
+                "5 вопросов — 550 ₽",
+                "6 вопросов — 650 ₽",
+                "7 вопросов — 750 ₽",
+                "8 вопросов — 850 ₽",
+                "9 вопросов — 950 ₽",
+                "10 вопросов — 1050 ₽",
+            ],
+            MDL: [
+                "1 вопрос — 33 MDL",
+                "2 вопроса — 55 MDL",
+                "3 вопроса — 77 MDL",
+                "4 вопроса — 99 MDL",
+                "5 вопросов — 122 MDL",
+                "6 вопросов — 144 MDL",
+                "7 вопросов — 166 MDL",
+                "8 вопросов — 188 MDL",
+                "9 вопросов — 211 MDL",
+                "10 вопросов — 233 MDL",
+            ],
+            PRB: [
+                "1 вопрос — 33 ₽",
+                "2 вопроса — 55 ₽",
+                "3 вопроса — 77 ₽",
+                "4 вопроса — 99 ₽",
+                "5 вопросов — 122 ₽",
+                "6 вопросов — 144 ₽",
+                "7 вопросов — 166 ₽",
+                "8 вопросов — 188 ₽",
+                "9 вопросов — 211 ₽",
+                "10 вопросов — 233 ₽",
+            ],
+        },
     },
     {
         title: "Как там бывшая?",
-        img:first,
+        img: first,
         prices: {
             RUB: "950 ₽",
             PRB: "211 ₽",
@@ -56,7 +83,7 @@ const spreads = [
 
     {
         title: "Тишина",
-        img:second,
+        img: second,
         prices: {
             RUB: "650 ₽",
             PRB: "144 ₽",
@@ -73,7 +100,7 @@ const spreads = [
     },
     {
         title: "Развитие отношений",
-        img:treti,
+        img: treti,
         prices: {
             RUB: "650 ₽",
             PRB: "144 ₽",
@@ -90,7 +117,7 @@ const spreads = [
     },
     {
         title: "Прогноз на год",
-        img:chet,
+        img: chet,
         prices: {
             RUB: "650 ₽",
             PRB: "144 ₽",
@@ -107,7 +134,7 @@ const spreads = [
     },
     {
         title: "Женатик",
-        img:pyat,
+        img: pyat,
         prices: {
             RUB: "850 ₽",
             PRB: "188 ₽",
@@ -124,7 +151,7 @@ const spreads = [
     },
     {
         title: "Пауза или конец?",
-        img:shest,
+        img: shest,
         prices: {
             RUB: "750 ₽",
             PRB: "166 ₽",
@@ -141,7 +168,7 @@ const spreads = [
     },
     {
         title: "Твой любовный треугольник",
-        img:sem,
+        img: sem,
         prices: {
             RUB: "750 ₽",
             PRB: "166 ₽",
@@ -158,7 +185,7 @@ const spreads = [
     },
     {
         title: "Стоит ли доверять человеку?",
-        img:vosem,
+        img: vosem,
         prices: {
             RUB: "550 ₽",
             PRB: "122 ₽",
@@ -175,7 +202,7 @@ const spreads = [
     },
     {
         title: "Отношение человека к тебе",
-        img:devyat,
+        img: devyat,
         prices: {
             RUB: "650 ₽",
             PRB: "144 ₽",
@@ -192,7 +219,7 @@ const spreads = [
     },
     {
         title: "Почему молчит?",
-        img:desat,
+        img: desat,
         prices: {
             RUB: "750 ₽",
             PRB: "166 ₽",
@@ -241,7 +268,9 @@ const spreads = [
     },
 ];
 
-const Cards = ({ currency }) => {
+
+const Cards = ({currency}) => {
+
     return (
         <Wrapper>
             <div className="main">
@@ -255,12 +284,12 @@ const Cards = ({ currency }) => {
 
                         <svg className="sakura-icon" viewBox="0 0 32 32">
                             <g fill="currentColor">
-                                <path d="M16 14C12 9 13 4 16 2C19 4 20 9 16 14Z" />
-                                <path d="M18 15C23 11 28 12 30 15C28 18 23 19 18 15Z" />
-                                <path d="M17 18C22 22 22 27 19 30C16 28 14 23 17 18Z" />
-                                <path d="M15 18C12 23 7 25 4 22C5 18 10 16 15 18Z" />
-                                <path d="M14 15C9 17 4 15 2 12C5 9 10 10 14 15Z" />
-                                <circle cx="16" cy="16" r="2.2" />
+                                <path d="M16 14C12 9 13 4 16 2C19 4 20 9 16 14Z"/>
+                                <path d="M18 15C23 11 28 12 30 15C28 18 23 19 18 15Z"/>
+                                <path d="M17 18C22 22 22 27 19 30C16 28 14 23 17 18Z"/>
+                                <path d="M15 18C12 23 7 25 4 22C5 18 10 16 15 18Z"/>
+                                <path d="M14 15C9 17 4 15 2 12C5 9 10 10 14 15Z"/>
+                                <circle cx="16" cy="16" r="2.2"/>
                             </g>
                         </svg>
 
@@ -290,21 +319,24 @@ const Cards = ({ currency }) => {
                         >
                             <div className="hover-glow"></div>
 
-                            <div className="card-frame" />
+                            <div className="card-frame"/>
 
                             <div className="spread-top">
                                 <span>Расклад</span>
                             </div>
 
                             <h3>{spread.title}</h3>
-
                             <div className="questions">
-                                {spread.questions.map((question, i) => (
+                                {(Array.isArray(spread.questions)
+                                        ? spread.questions
+                                        : spread.questions[currency]
+                                ).map((question, i) => (
                                     <div className="question" key={i}>
                                         <span>{question}</span>
                                     </div>
                                 ))}
                             </div>
+
 
                             <div className="card-bottom">
                                 <span>Стоимость расклада</span>
@@ -340,21 +372,17 @@ const Wrapper = styled.div`
     width: 135px;
     height: 1px;
 
-    background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(135, 25, 25, 0.9)
-    );
+    background: linear-gradient(90deg,
+    transparent,
+    rgba(135, 25, 25, 0.9));
 
     box-shadow: 0 0 8px rgba(140, 20, 20, 0.35);
   }
 
   .divider-line:last-child {
-    background: linear-gradient(
-            90deg,
-            rgba(135, 25, 25, 0.9),
-            transparent
-    );
+    background: linear-gradient(90deg,
+    rgba(135, 25, 25, 0.9),
+    transparent);
   }
 
   .sakura-icon {
@@ -405,17 +433,15 @@ const Wrapper = styled.div`
 
     border: 1px solid rgba(220, 83, 88, 0.32);
 
-    box-shadow:
-            0 28px 80px rgba(0, 0, 0, 0.58),
-            inset 0 0 0 1px rgba(255, 215, 190, 0.06),
-            inset 0 0 42px rgba(150, 20, 30, 0.22);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.58),
+    inset 0 0 0 1px rgba(255, 215, 190, 0.06),
+    inset 0 0 42px rgba(150, 20, 30, 0.22);
 
     backdrop-filter: blur(18px);
 
-    transition:
-            transform 0.45s ease,
-            border-color 0.45s ease,
-            box-shadow 0.45s ease;
+    transition: transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
   }
 
   .spread-card::before {
@@ -426,9 +452,8 @@ const Wrapper = styled.div`
 
     opacity: 0.16;
 
-    background-image:
-            linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 
     background-size: 28px 28px;
 
@@ -439,27 +464,25 @@ const Wrapper = styled.div`
     position: absolute;
     inset: 0;
     border-radius: 26px;
-    background:
-            radial-gradient(circle at top,
-            rgba(255, 120, 120, 0.35),
-            transparent 45%);
+    background: radial-gradient(circle at top,
+    rgba(255, 120, 120, 0.35),
+    transparent 45%);
 
     opacity: 0;
-    transition: opacity 0s ;
+    transition: opacity 0s;
     z-index: 0;
   }
 
   .spread-card:hover {
     transform: translateY(-14px) scale(1.02);
-transition: opacity 0s;
+    transition: opacity 0s;
     border-color: rgba(255, 180, 180, 0.95);
 
-    box-shadow:
-            0 45px 120px rgba(0, 0, 0, 0.78),
-            0 0 40px rgba(255, 70, 70, 0.28),
-            0 0 80px rgba(255, 120, 120, 0.16),
-            inset 0 0 0 1px rgba(255, 240, 240, 0.14),
-            inset 0 0 55px rgba(255, 70, 70, 0.18);
+    box-shadow: 0 45px 120px rgba(0, 0, 0, 0.78),
+    0 0 40px rgba(255, 70, 70, 0.28),
+    0 0 80px rgba(255, 120, 120, 0.16),
+    inset 0 0 0 1px rgba(255, 240, 240, 0.14),
+    inset 0 0 55px rgba(255, 70, 70, 0.18);
   }
 
   .spread-card:hover .hover-glow {
@@ -469,19 +492,15 @@ transition: opacity 0s;
   .spread-card:hover h3 {
     color: #fff6f2;
 
-    text-shadow:
-            0 0 12px rgba(255, 255, 255, 0.35),
-            0 0 26px rgba(255, 120, 120, 0.65),
-            0 0 42px rgba(255, 80, 80, 0.45);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.35),
+    0 0 26px rgba(255, 120, 120, 0.65),
+    0 0 42px rgba(255, 80, 80, 0.45);
   }
 
   .spread-card:hover .question {
-    background:
-            linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, 0.12),
-                    rgba(160, 40, 40, 0.24)
-            );
+    background: linear-gradient(145deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(160, 40, 40, 0.24));
 
     border-color: rgba(255, 200, 200, 0.28);
 
@@ -491,13 +510,10 @@ transition: opacity 0s;
   .spread-card:hover .card-bottom {
     border-color: rgba(255, 210, 210, 0.32);
 
-    background:
-            linear-gradient(
-                    90deg,
-                    rgba(25, 10, 12, 0.82),
-                    rgba(145, 28, 36, 0.58),
-                    rgba(25, 10, 12, 0.82)
-            );
+    background: linear-gradient(90deg,
+    rgba(25, 10, 12, 0.82),
+    rgba(145, 28, 36, 0.58),
+    rgba(25, 10, 12, 0.82));
   }
 
   .card-frame {
@@ -516,9 +532,8 @@ transition: opacity 0s;
   .spread-card:hover .card-frame {
     border-color: rgba(255, 220, 220, 0.45);
 
-    box-shadow:
-            inset 0 0 25px rgba(255, 255, 255, 0.05),
-            0 0 20px rgba(255, 90, 90, 0.25);
+    box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(255, 90, 90, 0.25);
   }
 
   .spread-top {
@@ -568,9 +583,8 @@ transition: opacity 0s;
 
     transition: all 0.45s ease;
 
-    text-shadow:
-            0 0 18px rgba(255, 74, 82, 0.22),
-            0 2px 0 rgba(0, 0, 0, 0.38);
+    text-shadow: 0 0 18px rgba(255, 74, 82, 0.22),
+    0 2px 0 rgba(0, 0, 0, 0.38);
   }
 
   .questions {
@@ -593,19 +607,15 @@ transition: opacity 0s;
     display: flex;
     align-items: center;
 
-    background:
-            linear-gradient(
-                    145deg,
-                    rgba(255, 239, 222, 0.12),
-                    rgba(126, 20, 26, 0.14)
-            ),
-            rgba(15, 7, 9, 0.42);
+    background: linear-gradient(145deg,
+    rgba(255, 239, 222, 0.12),
+    rgba(126, 20, 26, 0.14)),
+    rgba(15, 7, 9, 0.42);
 
     border: 1px solid rgba(255, 196, 175, 0.16);
 
-    box-shadow:
-            inset 0 0 0 1px rgba(255, 255, 255, 0.03),
-            0 14px 28px rgba(0, 0, 0, 0.22);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 14px 28px rgba(0, 0, 0, 0.22);
 
     transition: all 0.35s ease;
   }
@@ -636,13 +646,10 @@ transition: opacity 0s;
 
     border-radius: 18px;
 
-    background:
-            linear-gradient(
-                    90deg,
-                    rgba(17, 7, 9, 0.78),
-                    rgba(104, 16, 22, 0.5),
-                    rgba(17, 7, 9, 0.78)
-            );
+    background: linear-gradient(90deg,
+    rgba(17, 7, 9, 0.78),
+    rgba(104, 16, 22, 0.5),
+    rgba(17, 7, 9, 0.78));
 
     border: 1px solid rgba(255, 160, 140, 0.24);
 
@@ -690,16 +697,17 @@ transition: opacity 0s;
       grid-template-columns: 1fr;
     }
   }
-  @media(max-width: 426px){
-    .spread-card h3{
+  @media (max-width: 426px) {
+    .spread-card h3 {
       font-size: clamp(23px, 2.4vw, 38px);
       max-width: 100%;
       letter-spacing: 0.3px;
       text-align: center;
-      
+
 
     }
-    .spread-card{
+
+    .spread-card {
       justify-content: center;
     }
   }
