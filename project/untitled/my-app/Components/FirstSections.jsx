@@ -51,9 +51,9 @@ const FirstSections = ({ openModal }) => {
             </div>
 
 
-<div className='sakuraBranch'>
-    <img src={sakuraBranch} alt=""/>
-</div>
+{/*<div className='sakuraBranch'>*/}
+{/*    <img src={sakuraBranch} alt=""/>*/}
+{/*</div>*/}
         </Wrapper>
     );
 };
