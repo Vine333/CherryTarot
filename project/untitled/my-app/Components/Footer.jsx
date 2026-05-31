@@ -61,7 +61,7 @@ const Footer = ({ openModal }) => {
                     </a>
 
                     <a
-                        href="https://www.instagram.com/direct/t/17842144262593546"
+                        href="https://www.instagram.com/witch_cherryy/"
                         target="_blank"
 
                     >
