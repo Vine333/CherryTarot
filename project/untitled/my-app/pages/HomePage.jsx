@@ -26,9 +26,10 @@ const HomePage = () => {
     return (
         <Wrapper>
             <SakuraLeaves />
-
-            <Header currency={currency}
+<header>
+    <Header currency={currency}
             setCurrency={setCurrency}/>
+</header>
 
             <section id="home">
                 <FirstSections openModal={openModal} />
@@ -47,7 +48,8 @@ const HomePage = () => {
             </section>
 
             <section id="contacts">
-                <Footer openModal={openModal} />
+
+з                <Footer openModal={openModal} />
             </section>
 
             <Modal

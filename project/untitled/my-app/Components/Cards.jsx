@@ -14,15 +14,14 @@ import desat from '/img/10.png'
 import odinatsat from '/img/11.png'
 import dvenatsat from '/img/12.png'
 
-
-const spreads = [
+const price = [
     {
         title: "Прайс вопросов",
         img: burger,
         prices: {
-            RUB: "от 150 ₽",
-            MDL: "от 33 MDL",
-            PRB: "от 33 ₽",
+            RUB: "",
+            MDL: "",
+            PRB: "",
         },
         questions: {
             RUB: [
@@ -62,7 +61,9 @@ const spreads = [
                 "10 вопросов — 233 ₽",
             ],
         },
-    },
+    }
+]
+const spreads = [
     {
         title: "Как там бывшая?",
         img: first,
@@ -296,8 +297,33 @@ const Cards = ({currency}) => {
                         <span className="divider-line"></span>
                     </div>
                 </div>
+                <div className="price-list">
+                    {price.map((item, index) => (
+                        <div className="price-card" key={index}>
+                            <div className="price-header">
+
+                                <div>
+                                    <h3>{item.title}</h3>
+                                    <div className="price-value">
+                                        {item.prices[currency]}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="price-questions">
+                                {item.questions[currency].map((question, i) => (
+                                    <div className="price-question" key={i}>
+                                        {question}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
                 <div className="spreads-grid">
+
+
                     {spreads.map((spread, index) => (
                         <article
                             className="spread-card"
@@ -326,6 +352,10 @@ const Cards = ({currency}) => {
                             </div>
 
                             <h3>{spread.title}</h3>
+
+                            <div className='price'>
+
+                            </div>
                             <div className="questions">
                                 {(Array.isArray(spread.questions)
                                         ? spread.questions
@@ -515,7 +545,120 @@ const Wrapper = styled.div`
     rgba(145, 28, 36, 0.58),
     rgba(25, 10, 12, 0.82));
   }
+  .price-list {
+    margin-bottom: 60px;
+  }
 
+  .price-card {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    background: linear-gradient(
+            145deg,
+            rgba(120, 20, 20, 0.25),
+            rgba(15, 5, 5, 0.8)
+    );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+            0 20px 60px rgba(0,0,0,0.45),
+            inset 0 0 25px rgba(255,255,255,0.03);
+  }
+
+  .price-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+
+  .price-header img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+
+  .price-header h3 {
+    margin: 0;
+    color: #fff4ee;
+    font-size: 32px;
+  }
+
+  .price-value {
+    margin-top: 8px;
+
+    color: #ffd9cf;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    text-shadow:
+            0 0 15px rgba(255,100,100,0.3);
+  }
+
+  .price-questions {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+
+  .price-question {
+    padding: 14px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: #fff4ee;
+
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 1000px) {
+    .price-questions {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .price-card {
+      padding: 22px;
+    }
+
+    .price-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .price-header h3 {
+      font-size: 24px;
+    }
+
+    .price-value {
+      font-size: 30px;
+    }
+
+    .price-questions {
+      grid-template-columns: 1fr;
+    }
+
+    .price-question {
+      font-size: 13px;
+    }
+  }
   .card-frame {
     position: absolute;
     inset: 12px;
